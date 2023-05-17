@@ -16,6 +16,12 @@
   <h1 class="text-2xl mb-8">Register</h1>
   <div class="form-control gap-2 mb-4">
     <input
+      type="name"
+      name="name"
+      placeholder="First Name"
+      class="input input-bordered"
+    />
+    <input
       type="email"
       name="email"
       placeholder="Email"

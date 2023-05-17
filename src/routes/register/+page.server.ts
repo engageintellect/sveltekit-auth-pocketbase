@@ -4,6 +4,7 @@ import type { Actions } from './$types'
 export const actions: Actions = {
   default: async ({ locals, request }) => {
     const data = Object.fromEntries(await request.formData()) as {
+      name: string
       email: string
       password: string
       passwordConfirm: string
