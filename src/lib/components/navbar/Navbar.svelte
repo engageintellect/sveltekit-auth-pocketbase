@@ -3,7 +3,7 @@
   import { currentUser, pb } from '$lib/pocketbase'
 </script>
 
-<div class="bg-neutral text-neutral-content">
+<div class="bg-red-500 text-neutral-content">
   <div class="max-w-5xl mx-auto navbar">
     <div class="navbar-start">
       <a href="/" class="btn btn-ghost text-xl">PB + SK</a>
