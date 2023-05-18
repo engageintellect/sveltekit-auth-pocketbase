@@ -38,6 +38,7 @@
 </script>
 
 <div class="text-xl">
+  <div>hi</div>
   {#if $currentUser}
     <div class="mb-10">Logged in as: <strong>{$currentUser.email}</strong></div>
 
