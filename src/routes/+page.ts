@@ -1,7 +1,6 @@
 import type { PageLoad } from './$types'
-import PocketBase from 'pocketbase'
 
-const pb = new PocketBase('http://45.56.88.245:8090')
+import { pb } from '$lib/pocketbase'
 
 export const load = (async () => {
   const records = await pb
