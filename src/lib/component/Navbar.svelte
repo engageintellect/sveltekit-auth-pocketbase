@@ -3,10 +3,10 @@
   import { currentUser, pb } from '$lib/pocketbase'
 </script>
 
-<div class="bg-neutral text-neutral-content">
+<div class="bg-base-200">
   <div class="max-w-5xl mx-auto navbar">
     <div class="navbar-start">
-      <a href="/" class="btn btn-ghost text-xl">PB + SK</a>
+      <a href="/" class="btn btn-ghost text-xl">AUTH+CRUD</a>
     </div>
     <div class="navbar-end">
       <ul class="menu menu-horizontal">
