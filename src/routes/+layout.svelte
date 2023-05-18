@@ -4,7 +4,6 @@
   import Footer from '$lib/component/Footer.svelte'
   import { currentUser, pb } from '$lib/pocketbase'
   import '../app.postcss'
-  import Nav from '$lib/component/Nav.svelte'
 </script>
 
 <div>
