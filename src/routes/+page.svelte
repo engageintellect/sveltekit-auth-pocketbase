@@ -1,41 +1,41 @@
 <script lang="ts">
+  let res: any
   import { currentUser, pb } from '$lib/pocketbase'
-  // import { applyAction, enhance } from '$app/forms'
-  // import PocketBase from 'pocketbase'
   import RecordCard from '$lib/component/RecordCard.svelte'
-  import type { PageData } from './$types'
 
-  export let data: PageData
+  async function records() {
+    const response = await fetch('/records')
+    res = await response.json()
+    return res
+  }
+
+  if ($currentUser) {
+    records()
+  }
 </script>
 
-<div class="text-xl">
+<div>
   {#if $currentUser}
-    <div class="mb-10">Logged in as: <strong>{$currentUser.email}</strong></div>
+    <div>Hello <strong>{$currentUser.name}!</strong></div>
 
-    <button class="btn btn-primary">
-      <a href="/addItem">Add Record</a>
-    </button>
-
-    <div class="">
-      <div class="">
-        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
-          {#each data.records as item}
-            <div class="">
-              <RecordCard
-                id={item.id}
-                name={item.name}
-                artist={item.artist}
-                genre={item.genre}
-                year={item.year}
-              />
-            </div>
-          {/each}
-        </div>
+    {#if res !== undefined}
+      <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
+        {#each res as item}
+          <div class="">
+            <RecordCard
+              id={item.id}
+              name={item.name}
+              artist={item.artist}
+              genre={item.genre}
+              year={item.year}
+            />
+          </div>
+        {/each}
       </div>
-    </div>
+    {/if}
   {:else}
-    <p>Not logged in...</p>
-    <button class="btn">
+    <div>not logged in</div>
+    <button class="btn btn-primary">
       <a href="/login">Login</a>
     </button>
   {/if}
