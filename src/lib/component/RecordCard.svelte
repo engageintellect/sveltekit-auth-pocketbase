@@ -1,6 +1,7 @@
 <script lang="ts">
   import { pb } from '$lib/pocketbase'
-  import PocketBase from 'pocketbase'
+
+  import { writable } from 'svelte/store'
 
   export let name: string
   export let artist: string
@@ -8,9 +9,19 @@
   export let year: string
   export let id: string
 
+  export const record = writable('')
+
   const handleDelete = async (item_id: string) => {
-    await pb.collection('albums').delete(item_id)
+    $record = id
+    console.log('record', $record)
+
+    // console.log('res', res)
+
+    const res = await pb.collection('albums').delete($record)
+    console.log('res', res)
     location.reload()
+
+    // await pb.collection('albums').delete(item_id)
   }
 </script>
 
@@ -22,6 +33,7 @@
     />
   </figure> -->
   <div class="card-body">
+    <div>{id}</div>
     <h2 class="card-title text-3xl">{name}</h2>
 
     <div><strong>Artist:</strong> {artist}</div>
