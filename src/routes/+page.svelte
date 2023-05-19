@@ -16,13 +16,19 @@
 
 <div>
   {#if $currentUser}
-    <div class="text-4xl my-10">
-      Hello <strong>{$currentUser.name}!</strong>
+    <div class="hero p-10 bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">
+            Hello, <strong class="capitalize">{$currentUser.name}!</strong>
+          </h1>
+          <p class="py-6">Add your favorite records to your collection.</p>
+          <button class="btn btn-primary">
+            <a href="/addRecord">Add Record</a>
+          </button>
+        </div>
+      </div>
     </div>
-
-    <button class="btn btn-primary">
-      <a href="/addRecord">Add Record</a>
-    </button>
 
     {#if res !== undefined}
       <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
