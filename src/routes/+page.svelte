@@ -46,7 +46,7 @@
       </div>
     {/if}
   {:else}
-    <div class="text-3xl my-10">Hey, stranger. You're not logged in.</div>
+    <div class="text-3xl my-10">Hey, stranger. You're not logged in!</div>
     <button class="btn btn-primary">
       <a href="/login">Login</a>
     </button>
