@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { pb } from '$lib/pocketbase'
   import PocketBase from 'pocketbase'
 
   export let name: string
@@ -6,8 +7,6 @@
   export let genre: string
   export let year: string
   export let id: string
-
-  const pb = new PocketBase('http://45.56.88.245:8090')
 
   const handleDelete = async (item_id: string) => {
     await pb.collection('albums').delete(item_id)
