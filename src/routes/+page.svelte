@@ -2,6 +2,7 @@
   let res: any
   import { currentUser, pb } from '$lib/pocketbase'
   import RecordCard from '$lib/component/RecordCard.svelte'
+  import Add from '$lib/component/Add.svelte'
 
   async function records() {
     const response = await fetch('/getRecords')
@@ -28,6 +29,10 @@
           </button>
         </div>
       </div>
+    </div>
+
+    <div>
+      <Add />
     </div>
 
     {#if res !== undefined}
