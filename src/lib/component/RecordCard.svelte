@@ -24,6 +24,7 @@
     })
 
     delRes = await response.json()
+    location.reload()
   }
 </script>
 
@@ -48,7 +49,6 @@
       <button
         on:click={() => {
           delRecord(id)
-          // location.reload()
         }}
         class="btn btn-error">delRecord</button
       >

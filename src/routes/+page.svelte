@@ -31,9 +31,9 @@
       </div>
     </div>
 
-    <div>
+    <!-- <div>
       <Add />
-    </div>
+    </div> -->
 
     {#if res !== undefined}
       <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
